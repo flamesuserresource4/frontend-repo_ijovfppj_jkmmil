@@ -20,11 +20,13 @@ const projects = [
 
 export default function Showcase() {
   return (
-    <section id="work" className="relative py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="work" className="relative py-28 bg-[#0a0a0b]">
+      {/* glow */}
+      <div className="pointer-events-none absolute inset-0 [background:radial-gradient(40%_30%_at_20%_20%,rgba(0,255,255,0.08),transparent_60%)]" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-end justify-between">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">Selected Work</h2>
-          <a href="#contact" className="text-sm text-gray-600 hover:text-gray-900">Request full portfolio →</a>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Selected Work</h2>
+          <a href="#contact" className="text-sm text-white/70 hover:text-white">Request full portfolio →</a>
         </div>
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -35,15 +37,15 @@ export default function Showcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-xl bg-gray-50 border border-gray-200"
+              className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={p.image} alt={p.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="p-4 flex items-center justify-between">
                 <div>
-                  <h3 className="font-semibold text-gray-900">{p.title}</h3>
-                  <p className="text-xs text-gray-600 mt-1">{p.tags.join(' • ')}</p>
+                  <h3 className="font-semibold">{p.title}</h3>
+                  <p className="text-xs text-white/70 mt-1">{p.tags.join(' • ')}</p>
                 </div>
                 <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity">View →</span>
               </div>
